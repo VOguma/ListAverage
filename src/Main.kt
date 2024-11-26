@@ -1,7 +1,12 @@
 fun main()
 {
-    var num = listOf(0, 1, 2, 3, 4, 5, 6)
-    println(num[3])
-    println(num[4])
+    val num: MutableList<Int> = mutableListOf()
+    num.add(7)
+    num.add(3)
+    num.add(7)
+    num.add(7)
 
+    var media = num.average()
+
+    println("A média do aluno foi de: $media")
 }
