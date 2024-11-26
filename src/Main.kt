@@ -1,19 +1,17 @@
 fun main()
 {
-    val num: MutableList<Double> = mutableListOf()
-    num.add(7.0)
-    num.add(8.5)
-    num.add(3.0)
-    num.add(6.3)
-    num.add(5.8)
-    num.add(8.6)
+    //Solicitar ao usuário os números
+    println("Digite os números separados por espaço:")
+    val input = readln() ?: ""
 
-    val media = num.average()
+    //Converter a entrada em uma lista de números
+    val numeros = input.split(" ").mapNotNull { it.toDoubleOrNull() }
 
-    if(media > 6) {
-        println("O discente foi aprovado com a média de: $media")
-    } else
-    {
-        println("O discente foi reprovado com a média de: $media")
+    //Calcular a média
+    if (numeros.isNotEmpty()) {
+        val media = numeros.average()
+        println("A média dos números é: $media")
+    } else {
+        println("Nenhum número válido foi fornecido")
     }
 }
