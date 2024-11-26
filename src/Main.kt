@@ -1,12 +1,19 @@
 fun main()
 {
-    val num: MutableList<Int> = mutableListOf()
-    num.add(7)
-    num.add(3)
-    num.add(7)
-    num.add(7)
+    var num: MutableList<Double> = mutableListOf()
+    num.add(7.0)
+    num.add(8.5)
+    num.add(3.0)
+    num.add(6.3)
+    num.add(5.8)
+    num.add(8.6)
 
     var media = num.average()
 
-    println("A média do aluno foi de: $media")
+    if(media > 6) {
+        println("O discente foi aprovado com a média de: $media")
+    } else
+    {
+        println("O discente foi reprovado com a média de: $media")
+    }
 }
